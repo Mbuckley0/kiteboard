@@ -87,24 +87,31 @@ h1, h2, h3, h4, h5, p {
   padding: 0;
   margin: 0;
 }
-h1 {
-  margin-bottom: 12px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 400;
-}
-h2 {
-  text-transform: uppercase;
-  font-size: 76px;
-  font-weight: 700;
-  color: $text-color;
-}
-h3 {
-  font-size: 25px;
-  font-weight: 600;
-  color: $text-color;
-}
 
+.widget {
+  h1 {
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 30px !important;
+    font-weight: 400 !important;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-size: 76px !important;
+    font-weight: 700 !important;
+    color: $text-color !important;
+  }
+  h3 {
+    font-size: 25px !important;
+    font-weight: 600 !important;
+    color: $text-color !important;
+  }
+  .list-nostyle {
+    li {
+      font-size: 22px !important;
+    }
+  }
+}
 // ----------------------------------------------------------------------------
 // Base widget styles
 // ----------------------------------------------------------------------------
