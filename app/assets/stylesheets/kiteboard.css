@@ -10,6 +10,6 @@
  *
  *= require font-awesome
  *= require jquery.gridster
- *= require widgets
+ *= require_directory ./widgets
  *= require_tree .
  */
