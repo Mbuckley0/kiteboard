@@ -1,3 +1,5 @@
+//= require jquery.knob
+//= require jquery.gridster
 //= require_tree .
 
 $(function () {

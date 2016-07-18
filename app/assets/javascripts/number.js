@@ -12,7 +12,7 @@ $(function () {
 
       if (data < currentValue) {
         changeRateIcon.addClass('fa-arrow-down');
-        if (data == currentValue) {
+        if (data == currentValue || currentValue == 0) {
           var changeRate = 0;
         } else {
           var changeRate = Math.round(((currentValue - data)/currentValue) * 100);
@@ -20,7 +20,7 @@ $(function () {
 
         widget.find('.change-rate').find('span').html(changeRate + '%');
       } else {
-        if (data == currentValue) {
+        if (data == currentValue || currentValue == 0) {
           var changeRate = 0;
         } else {
           var changeRate = Math.round(((data - currentValue)/currentValue) * 100);
