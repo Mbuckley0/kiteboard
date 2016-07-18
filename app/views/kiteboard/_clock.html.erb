@@ -1,0 +1,6 @@
+<% background_color ||= '#F2711C' %>
+
+<div class="widget widget-clock" style="background-color: <%= background_color %>">
+  <h1><%= Date.today %></h1>
+  <h2><%= Time.now.strftime('%H:%M:%S') %></h2>
+</div>
