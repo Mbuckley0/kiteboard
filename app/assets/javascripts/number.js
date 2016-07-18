@@ -15,7 +15,7 @@ $(function () {
         if (data == currentValue) {
           var changeRate = 0;
         } else {
-          var changeRate = Math.round((currentValue / data) * 100);
+          var changeRate = Math.round(((currentValue - data)/currentValue) * 100);
         }
 
         widget.find('.change-rate').find('span').html(changeRate + '%');
@@ -23,7 +23,7 @@ $(function () {
         if (data == currentValue) {
           var changeRate = 0;
         } else {
-          var changeRate = Math.round((currentValue / data) * 100);
+          var changeRate = Math.round(((data - currentValue)/currentValue) * 100);
         }
 
         changeRateIcon.addClass('fa-arrow-up');
