@@ -12,6 +12,14 @@ $(function () {
         widget_margins: [5, 5],
         widget_base_dimensions: [300, 360]
       });
+    },
+
+    updateWidgets: function (data) {
+      var widgets = $('.gridster>ul>li');
+      $(widgets).each(function () {
+        var widget = $(this);
+        window[widget.data('widget')].setData(widget, data[this.id]);
+      });
     }
   };
 });
