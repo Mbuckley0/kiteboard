@@ -1,38 +1,102 @@
 # Kiteboard
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kiteboard`. To experiment with that code, run `bin/console` for an interactive prompt.
+A gem to make creating dynamic dashboards easy
 
-TODO: Delete this and the text above, and describe your gem
+Sponsored by [tworedkites](http://tworedkites.com/).
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'kiteboard'
+gem 'kiteboard', git: 'https://github.com/Mbuckley0/kiteboard.git', branch: :master
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Then add this line to your application.js file
 
-    $ gem install kiteboard
+```
+//= require kiteboard
+```
+
+Then add this line to your application.css file
+
+```
+*= require kiteboard
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+To setup a dashboard you will need a javascript file, a controller and a html page.
+Following is some example code to create a dashboard with a single number widget.
 
-## Development
+Controller
+```
+class DashboardController < ApplicationController
+  def index
+    kites = Kite.all
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: { 'total-kite-amount' => kites.count }
+      end
+    end
+  end
+end
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+
+Javascript
+```
+$(function () {
+  'use strict';
+  window.Dashboard = {
+    init: function() {
+      setTimeout(function() {
+        Dashboard.getData();
+        Dashboard.init();
+      }, 15000);
+    },
+
+    getData: function () {
+      $.getJSON($(location).attr('href')+'.json').then(function (data) {
+        Kiteboard.updateWidgets(data);
+      });
+    }
+  };
+});
+
+```
+
+HTML
+```
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" id="total-kite-amount" data-widget="Number">
+      <%= render 'kiteboard/number', {title: 'Total Number of Kites'} %>
+    </li>
+  </ul>
+</div>
+
+<script>
+  $(function () {
+    Kiteboard.init();
+    Dashboard.init();
+    Dashboard.getData();
+  });
+</script>
+
+```
+
+You will also need to add a line to your routes file to point to the dashboard controller
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/kiteboard.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mbuckley0/kiteboard.
 
 
 ## License
