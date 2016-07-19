@@ -12,13 +12,20 @@ $(function () {
         widget_margins: [5, 5],
         widget_base_dimensions: [300, 360]
       });
+
+      var widgets = $(".gridster>ul>li[data-widget='Clock']");
+      $(widgets).each(function () {
+        Clock.startClock($(this));
+      });
     },
 
     updateWidgets: function (data) {
       var widgets = $('.gridster>ul>li');
       $(widgets).each(function () {
         var widget = $(this);
-        window[widget.data('widget')].setData(widget, data[this.id]);
+        if (widget.data('widget') != 'Clock') {
+          window[widget.data('widget')].setData(widget, data[this.id]);
+        }
       });
     }
   };
