@@ -94,6 +94,10 @@ HTML
 
 You will also need to add a line to your routes file to point to the dashboard controller
 
+## Demo
+The demo app webpage for the kiteboard gem is viewable [here](https://evening-inlet-86869.herokuapp.com/)
+The demo app codebase can also be viewed [here](https://github.com/Mbuckley0/kiteboard_demo)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mbuckley0/kiteboard.
