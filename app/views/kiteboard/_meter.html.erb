@@ -1,9 +1,16 @@
 <% background_color ||= '#A333C8' %>
+<% bgColor ||= '#662B4c' %>
+<% angleoffset ||= '-125' %>
+<% anglearc ||= '250' %>
+<% fgColor ||= '#fff' %>
+<% thickness ||= '' %>
+<% width ||= '' %>
+<% rotation ||= '' %>
 
 <div class="widget widget-meter" style="background-color: <%= background_color %>">
   <h1 class="title"><%= title %></h1>
 
-  <input type="text" data-fgColor="#fff" data-bgColor="#662B4C" data-angleoffset="-125" data-anglearc="250" data-readonly="true" data-min="<%= min %>" data-max="<%= max %>" value="0" class="meter" >
+  <input type="text" data-fgColor="<%= fgColor %>" data-bgColor="<%= bgColor %>" data-rotation="<%= rotation %>" data-angleoffset="<%= angleoffset %>" data-anglearc="<%= anglearc %>" data-readonly="true" data-thickness="<%= thickness %>" data-width="<%= width %>" data-min="<%= min %>" data-max="<%= max %>" value="0" class="meter" >
 
   <p class="updated-at">Last updated at <%= Time.now.strftime('%H:%M:%S') %></p>
 </div>
