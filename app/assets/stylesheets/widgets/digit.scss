@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #47bbb3;
+$background-color:  #008080;
 $value-color:       #fff;
 
 $title-color:       rgba(255, 255, 255, 0.7);
@@ -11,8 +11,8 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 // Widget-number styles
 // ----------------------------------------------------------------------------
 .widget-digit {
-
   background-color: $background-color;
+  text-align: center;
 
   .title {
     color: $title-color;
@@ -20,11 +20,11 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
   .value {
     color: $value-color;
+    font-size: 64px;
+    margin-bottom: 5px;
   }
 
   .change-rate {
-    font-weight: 500;
-    font-size: 30px;
     color: $value-color;
   }
 
@@ -33,7 +33,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .updated-at {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.7);
   }
 
 }
