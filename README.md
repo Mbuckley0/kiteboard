@@ -9,7 +9,7 @@ Sponsored by [tworedkites](http://tworedkites.com/).
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'kiteboard', git: 'https://github.com/Mbuckley0/kiteboard.git', branch: :master
+gem 'kiteboard', '~> 0.1.0'
 ```
 
 And then execute:
