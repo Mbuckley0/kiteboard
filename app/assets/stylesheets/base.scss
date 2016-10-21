@@ -38,6 +38,16 @@ $text-color: #fff;
   }
 }
 
+@media (max-width: 1240px) {
+  .grid-stack-item {
+    position: relative !important;
+    width: auto !important;
+    left: 0 !important;
+    top: auto !important;
+    margin-bottom: 20px;
+  }
+}
+
 .more-info {
   font-size: 15px;
   position: absolute;

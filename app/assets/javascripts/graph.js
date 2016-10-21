@@ -39,6 +39,12 @@ $(function () {
     graph[widget.attr('id')].series[0].data[2].y = graph[widget.attr('id')].series[0].data[1].y;
     graph[widget.attr('id')].series[0].data[1].y = data;
 
+    var width = widget.width();
+    var height = widget.height();
+
+    graph[widget.attr('id')].width = width;
+    graph[widget.attr('id')].height = height;
+
     graph[widget.attr('id')].render();
 
     widget.find('.updated-at').html('Last updated at ' + new Date().toLocaleTimeString())

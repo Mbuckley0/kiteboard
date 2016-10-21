@@ -1,15 +1,6 @@
-//= require jquery-ui/core
-//= require jquery-ui/mouse
-//= require jquery-ui/widget
-//= require jquery-ui/draggable
-//= require jquery-ui/resizeable
+//= require rickshaw-rails
+//= require gridstack-js-rails
 //= require jquery.knob
-//= require underscore-min
-//= require gridstack
-//= require gridstack.jQueryUI
-//= require d3.min
-//= require d3.layout.min
-//= require rickshaw.min
 //= require_tree .
 
 $(function () {
@@ -19,6 +10,7 @@ $(function () {
       $('.grid-stack').gridstack({
         cellHeight: 360,
         width: 4,
+        minWidth: 1240,
         alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
         resizable: {
           handles: 'e, se, s, sw, w'
@@ -58,22 +50,23 @@ $(function () {
         return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
       }
       return num;
+
     },
 
     resizeWidgets: function () {
-      if (window.innerWidth < $('.grid-stack').width()) {
-        var grid = $('.grid-stack').data('gridstack');
+      var gridStack = $('.grid-stack');
+
+      if (window.innerWidth < gridStack.width()) {
+        var grid = gridStack.data('gridstack');
         grid.resizable('.grid-stack-item', false);
         grid.movable('.grid-stack-item', false);
-        var rightMargin = ($('.grid-stack').width() - window.innerWidth) + 20;
+        var rightMargin = (gridStack.width() - window.innerWidth) + 20;
         $('.grid-stack-item').attr('style', 'margin-right: ' + rightMargin + 'px');
-        $('.grid-stack').addClass('grid-stack-one-column-mode');
       } else {
-        var grid = $('.grid-stack').data('gridstack');
+        var grid = gridStack.data('gridstack');
         grid.resizable('.grid-stack-item', true);
         grid.movable('.grid-stack-item', true);
         $('.grid-stack-item').attr('style', 'margin-right: 0px');
-        $('.grid-stack').removeClass('grid-stack-one-column-mode');
       }
     }
   };
