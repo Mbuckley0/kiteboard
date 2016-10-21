@@ -1,0 +1,11 @@
+<% title ||= '' %>
+
+<div class="widget widget-graph">
+  <div id="chart">
+    <h1 class="title"><%= title %></h1>
+
+    <h2 class="value"></h2>
+
+    <p class="updated-at">Last updated at <%= Time.now.strftime('%H:%M:%S') %></p>
+  </div>
+</div>

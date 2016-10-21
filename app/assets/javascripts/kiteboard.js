@@ -1,5 +1,8 @@
 //= require jquery.knob
 //= require jquery.gridster
+//= require d3.min
+//= require d3.layout.min
+//= require rickshaw.min
 //= require_tree .
 
 $(function () {
@@ -13,9 +16,14 @@ $(function () {
         widget_base_dimensions: [300, 360]
       });
 
-      var widgets = $(".gridster>ul>li[data-widget='Clock']");
-      $(widgets).each(function () {
+      var clockWidgets = $(".gridster>ul>li[data-widget='Clock']");
+      $(clockWidgets).each(function () {
         Clock.startClock($(this));
+      });
+
+      var graphWidgets = $(".gridster>ul>li[data-widget='Graph']");
+      $(graphWidgets).each(function () {
+        Graph.setup($(this));
       });
     },
 

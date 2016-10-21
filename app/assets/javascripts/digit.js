@@ -1,9 +1,9 @@
 $(function () {
   'use strict';
 
-  window.Number = window.Number || {};
+    window.Digit = window.Digit || {};
 
-  Number.setData = function (widget, data) {
+  Digit.setData = function (widget, data) {
     var currentValue = widget.find('.value')[0].getAttribute('data-value');
     widget.find('.value').html(Kiteboard.nFormatter(data));
     widget.find('.value')[0].setAttribute('data-value', data);
