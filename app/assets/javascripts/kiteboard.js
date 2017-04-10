@@ -1,8 +1,7 @@
-//= require jquery.knob
 //= require jquery.gridster
-//= require d3.min
-//= require d3.layout.min
-//= require rickshaw.min
+//= require jquery.knob
+//= require d3
+//= require rickshaw-rails
 //= require_tree .
 
 $(function () {
