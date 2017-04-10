@@ -1,7 +1,5 @@
 //= require jquery.gridster
 //= require jquery.knob
-//= require d3
-//= require rickshaw-rails
 //= require_tree .
 
 $(function () {
