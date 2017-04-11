@@ -1,6 +1,6 @@
 //= require rickshaw-rails
 //= require gridstack-js-rails
-//= require jquery.knob
+//= require jquery.knob.min.js
 //= require_tree .
 
 $(function() {
