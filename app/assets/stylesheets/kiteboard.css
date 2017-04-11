@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require font-awesome
- *= require jquery.gridster
+ *= require jquery.gridster.min.css
  *= require_directory ./widgets
  *= require_tree .
  */

@@ -1,5 +1,5 @@
-//= require jquery.gridster
-//= require jquery.knob
+//= require jquery.gridster.min.js
+//= require jquery.knob.min.js
 //= require_tree .
 
 $(function () {
